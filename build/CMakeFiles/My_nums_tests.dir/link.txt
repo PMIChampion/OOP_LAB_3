@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/My_nums_tests.dir/tests.cpp.o -o My_nums_tests  lib/libgtest.a lib/libgtest_main.a libMy_nums_lib.a lib/libgtest.a

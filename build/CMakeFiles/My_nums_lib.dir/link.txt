@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libMy_nums_lib.a CMakeFiles/My_nums_lib.dir/src/Figure.cpp.o CMakeFiles/My_nums_lib.dir/src/Pentagon.cpp.o CMakeFiles/My_nums_lib.dir/src/Rhomb.cpp.o CMakeFiles/My_nums_lib.dir/src/Trapecy.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libMy_nums_lib.a
