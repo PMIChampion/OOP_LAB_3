@@ -39,6 +39,30 @@ Figure& Rhomb::operator=(const Figure& other) {
     return *this;
 }
 
+Rhomb::Rhomb(const Rhomb& other) {
+    std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Конструктор перемещения
+Rhomb::Rhomb(Rhomb&& other) noexcept {
+    std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Оператор копирующего присваивания
+Rhomb& Rhomb::operator=(const Rhomb& other) {
+    if (this != &other) {
+        std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
+
+// Оператор перемещающего присваивания
+Rhomb& Rhomb::operator=(Rhomb&& other) noexcept {
+    if (this != &other) {
+        std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
 void Rhomb::read(std::istream& is) {
     for (int i = 0; i < 4; ++i){
         is  >> points[i].first >> points[i].second;

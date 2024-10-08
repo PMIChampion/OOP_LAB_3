@@ -10,6 +10,30 @@ Pentagon::Pentagon(const std::pair<double, double>& v1, const std::pair<double, 
         points[4] = v5;
 }
 
+Pentagon::Pentagon(const Pentagon& other) {
+    std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Конструктор перемещения
+Pentagon::Pentagon(Pentagon&& other) noexcept {
+    std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Оператор копирующего присваивания
+Pentagon& Pentagon::operator=(const Pentagon& other) {
+    if (this != &other) {
+        std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
+
+// Оператор перемещающего присваивания
+Pentagon& Pentagon::operator=(Pentagon&& other) noexcept {
+    if (this != &other) {
+        std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
 std::pair<double, double> Pentagon::Center_of_figure() const{
     double x = 0, y = 0;
     for (int i = 0; i < 5; ++i){

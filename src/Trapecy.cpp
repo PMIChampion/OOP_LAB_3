@@ -46,6 +46,31 @@ void Trapecy::read(std::istream& is) {
     }
 }
 
+Trapecy::Trapecy(const Trapecy& other) {
+    std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Конструктор перемещения
+Trapecy::Trapecy(Trapecy&& other) noexcept {
+    std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+}
+
+// Оператор копирующего присваивания
+Trapecy& Trapecy::operator=(const Trapecy& other) {
+    if (this != &other) {
+        std::copy(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
+
+// Оператор перемещающего присваивания
+Trapecy& Trapecy::operator=(Trapecy&& other) noexcept {
+    if (this != &other) {
+        std::move(std::begin(other.points), std::end(other.points), std::begin(points));
+    }
+    return *this;
+}
+
 void Trapecy::print(std::ostream& os) const{
     for (int i = 0; i < 4; ++i){
         os << points[i].first << points[i].second << " | ";

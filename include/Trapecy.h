@@ -14,7 +14,10 @@ public:
     operator double() const override;
     Figure& operator=(const Figure& other) override;
     bool operator==(const Figure& other) const override;
-
+    Trapecy(const Trapecy& other);
+    Trapecy(Trapecy&& other) noexcept;
+    Trapecy& operator=(const Trapecy& other);
+    Trapecy& operator=(Trapecy&& other) noexcept;
 protected:
 
     void print(std::ostream& os) const override;

@@ -14,7 +14,10 @@ public:
     operator double() const override;
     Figure& operator=(const Figure& other) override;
     bool operator==(const Figure& other) const override;
-
+    Rhomb(const Rhomb& other);
+    Rhomb(Rhomb&& other) noexcept;
+    Rhomb& operator=(const Rhomb& other);
+    Rhomb& operator=(Rhomb&& other) noexcept;
 protected:
 
     void print(std::ostream& os) const override;
